@@ -1,0 +1,16 @@
+[Unit]
+Description=Robot Voice Service - Sensor detection and voice responses
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/voice-control/example_integration.py --robot-ip 192.168.12.1
+WorkingDirectory=/opt/voice-control
+Restart=always
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
