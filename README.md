@@ -126,6 +126,32 @@ if abs(roll) > 60° or abs(pitch) > 60°:
 
 ## Installation
 
+### Windows 10
+
+1. Open a Command Prompt in the repository folder.
+2. Run:
+
+```bat
+install_windows.bat
+```
+
+3. Start the service with:
+
+```bat
+run_voice_service.bat
+```
+
+You can override the robot connection settings with environment variables:
+
+```bat
+set ROBOT_IP=10.0.0.148
+set ROBOT_PASSWORD=123
+set IDLE_INTERVAL=20
+run_voice_service.bat
+```
+
+### Linux / macOS
+
 ### 1. Copy files to your server
 
 ```bash

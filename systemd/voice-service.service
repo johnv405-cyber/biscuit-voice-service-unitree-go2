@@ -4,13 +4,16 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /opt/voice-control/example_integration.py --robot-ip 192.168.12.1
-WorkingDirectory=/opt/voice-control
+ExecStart=/workspaces/biscuit-voice-service-unitree-go2/run_voice_service.sh
+WorkingDirectory=/workspaces/biscuit-voice-service-unitree-go2
 Restart=always
 RestartSec=3
 StandardOutput=journal
 StandardError=journal
 Environment=PYTHONUNBUFFERED=1
+Environment=ROBOT_IP=192.168.12.1
+Environment=ROBOT_PASSWORD=123
+Environment=IDLE_INTERVAL=15
 
 [Install]
 WantedBy=multi-user.target
